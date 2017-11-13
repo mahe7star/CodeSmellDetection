@@ -129,7 +129,42 @@ public class similarity {
 		 System.out.println(max);
 		 sim=(float)temp/max;
 		 System.out.printf("Sim(A,B) = %.3f",sim);
+		 System.out.println();
+		 //passing value of sim to find overlap and lack of generality.
+		 cost(sim);
 	 }
+	 
+	 public static void cost(float sim){
+		 float Oi,D,LG,S,cost,temp;
+		 scan = new Scanner( System.in );
+		 System.out.println("*********************************");
+		 System.out.println("Finding Overlap between Detectors");
+		 System.out.println("*********************************");
+		 System.out.println("Enter value of |D|");
+		 D = scan.nextFloat();
+		 Oi=sim/D;
+		 System.out.printf("Overlap between given Detectors :  %.3f",Oi);
+		 System.out.println();
+		 scan = new Scanner( System.in );
+		 System.out.println("*********************************");
+		 System.out.println("Finding Lack of Generality between Detector and Reference Code");
+		 System.out.println("*********************************");
+		 System.out.println("Enter value of |S|");
+		 S = scan.nextFloat();
+		 LG=sim/S;
+		 System.out.printf("LG =  %.3f",LG);
+		 System.out.println();
+		 temp=LG+Oi;
+		 cost=temp/2;
+		 System.out.printf("cost(d) =  %.3f",cost);
+		 System.out.println();
+	 }
+	 
+	
+	 
+	 public static void cost(float LG,float Oi){
+		 
+	 } 
 	 
 	 public static void print(char arr[][]){
 		 System.out.println("******************************");
